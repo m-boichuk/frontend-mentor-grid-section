@@ -1,0 +1,193 @@
+/* Import */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+/* CSS Reset */
+html,
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* CSS Rules */
+body {
+  background-color: #edf2f8;
+}
+
+.grid-cards {
+  display: grid;
+  margin: 50px auto 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1110px;
+  max-height: 570px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 25px;
+}
+/* Card Design */
+.card {
+  padding: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-header {
+  display: flex;
+}
+
+.card-header .avatar {
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.card-header .name {
+  font-size: 16px;
+  color: white;
+}
+
+.card-header .description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card-body .title {
+  margin: 20px 0;
+  font-size: 20px;
+  color: white;
+}
+
+.card-footer .bio {
+  font-size: 14px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card:hover {
+  transform: translateY(-20px);
+}
+
+/* Themes */
+
+.theme-violet {
+  background-color: darkviolet;
+  background-image: url(../img/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 80px;
+  background-size: auto;
+}
+
+.theme-violet .avatar {
+  border-color: #9669de;
+}
+
+.theme-grayish-blue {
+  background-color: #48556a;
+}
+
+.theme-white {
+  box-shadow: 4px 4px 10px rgba(33, 33, 33, 0.3);
+  background-color: white;
+}
+
+.theme-white .name,
+.theme-white .title {
+  color: #48556a;
+}
+
+.theme-white .description {
+  color: rgba(72, 85, 106, 0.5);
+}
+
+.theme-white .bio {
+  color: rgba(72, 85, 106, 0.7);
+}
+
+.theme-blackish-blue {
+  background-color: #19212e;
+}
+
+.card:nth-child(4) .avatar {
+  border-color: #624798;
+}
+
+.card:nth-child(5) .avatar {
+  border-color: #cfcfcf;
+}
+
+/* Grid */
+.card:nth-child(1) {
+  grid-column: 1 / span 2;
+}
+
+.card:nth-child(3) {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.card:nth-child(4) {
+  grid-column: 2/4;
+  grid-row: 2/3;
+}
+
+.card:nth-child(5) {
+  grid-column: 4/5;
+  grid-row: 1/3;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 992px) {
+  .grid-cards {
+    max-width: 760px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card:nth-child(5) {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-cards {
+    max-width: 100%;
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+  }
+  .grid-cards .card {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: 4px 4px 20px rgba(33, 33, 33, 0.7);
+  }
+
+  .theme-violet {
+    background-position: top right 20px;
+    background-size: 100px 100px;
+  }
+}
